@@ -1,0 +1,120 @@
+@CHARSET "ISO-8859-1";
+
+a {
+	color: rgb(102, 102, 102);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body,td {
+	color: rgb(80, 80, 80);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+h1 {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: rgb(102, 102, 255);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: rgb(80, 80, 80);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+form {
+	margin: 0px;
+}
+
+.headerMenu {
+	background-color: rgb(240,240,240);
+	color: rgb(50,50,50);
+}
+
+.headerMenu a {
+	color: rgb(50,50,50);
+}
+
+#headerMenuSelected,#headerMenuSelected a,.headerUnderline {
+	background-color: rgb(102, 102, 255);
+	color: rgb(255, 255, 255);
+}
+
+#headerMenuLinkActive {
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+DIV.block {
+	padding:5px;
+	background-image:url(bg_block.jpg);
+	background-repeat: repeat-x;
+	background-color: rgb(255,255,255);
+	border:1px solid rgb(120,120,120);
+}
+
+DIV.block H2 {
+  	font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+	margin:0px;
+	color: rgb(0,150,0);
+}
+
+DIV.block H3 {
+  	font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+	margin:0px;
+	color: rgb(85, 85, 85);
+}
+
+DIV.error {
+	border:1px solid rgb(180,0,0);
+	background-color:rgb(255,235,235);
+	color:rgb(180,0,0);
+	font-weight:bold;
+	margin:10px;
+	padding:5px;
+}
+
+DIV.success {
+	border:1px solid rgb(0,180,0);
+	background-color:rgb(235,255,235);
+	color:rgb(0,180,0);
+	font-weight:bold;
+	margin:10px;
+	padding:5px;
+}
+
+DIV.subtle {
+	background-color:rgb(235,255,211);	
+	margin:5px;
+	padding:5px;
+}
+
+DIV.subtle2 {
+	background-color:rgb(239,245,255);
+	margin:5px;
+	padding:5px;
+}
+
+.status_ok {
+	color:rgb(0,200,0);
+}
+
+.status_warning {
+	color:rgb(244,184,0);	
+}
+
+.status_critical {
+	color:rgb(200,0,0);
+}

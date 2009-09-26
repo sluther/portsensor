@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!ELEMENT plugin (id,name,description,author,revision,link,is_configurable?,class,event_points?,extensions?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT revision (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT is_configurable (#PCDATA)>
+<!ELEMENT event_points (event*)>
+	<!ATTLIST event id CDATA #REQUIRED>
+	<!ELEMENT event (name,param*)>
+<!ELEMENT extensions (extension*)>
+	<!ATTLIST extension point CDATA #REQUIRED>
+	<!ELEMENT extension (id,name,class,params?)>
+	<!ELEMENT class (file,name)>
+		<!ELEMENT file (#PCDATA)>
+	<!ELEMENT params (param*)>
+	<!ELEMENT param (value*)>
+		<!ELEMENT value (data*)>
+			<!ELEMENT data (#PCDATA)>
+
+		<!ATTLIST param key CDATA #REQUIRED>
+		<!ATTLIST param value CDATA #IMPLIED>
+		
+		<!ATTLIST data key CDATA #REQUIRED>
+		<!ATTLIST data value CDATA #IMPLIED>
+		

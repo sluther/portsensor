@@ -1,0 +1,212 @@
+<!DOCTYPE plugin SYSTEM "../../libs/devblocks/plugin.dtd">
+<plugin>
+	<id>app.core</id>
+	<name>PortSensor Core</name>
+	<description>The core functionality of PortSensor Portal.</description>
+	<author>WebGroup Media, LLC.</author>
+	<revision>0</revision>
+	<link>http://www.portsensor.com/</link>
+	<class>
+		<file>classes.php</file>
+		<name>PsCorePlugin</name>
+	</class>
+	
+	<!-- 
+	<requires>
+		<plugin id="plugin.core.id" version=">= 1.0" />
+	</requires>
+	 -->
+
+	<!-- 
+	<extension-points>
+		<point id=""></point>
+	</extension-points>
+	-->
+	
+	<!-- Event Points -->
+
+	<!-- 
+	<event_points>
+		<event id="ticket.moved">
+			<name>Ticket Moved</name>
+			<param key="ticket_ids" />
+			<param key="tickets" />
+			<param key="team_id" />
+			<param key="bucket_id" />
+		</event>
+	</event_points>
+	 -->
+
+	<extensions>
+
+		<!-- Event Listeners -->
+		
+		<!-- 
+		<extension point="devblocks.listener.event">
+			<id>cerberusweb.listeners.event</id>
+			<name>Cerberus Helpdesk Event Listener</name>
+			<class>
+				<file>listeners.classes.php</file>
+				<name>ChCoreEventListener</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+		 -->
+ 
+		<!-- Routers -->
+		
+		<!-- Controllers -->
+		
+		<extension point="devblocks.controller">
+			<id>core.controller.update</id>
+			<name>Update/Patch Controller</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsUpdateController</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+
+		<extension point="devblocks.controller">
+			<id>core.controller.page</id>
+			<name>Core Controller</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsPageController</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+		
+		<extension point="devblocks.controller">
+			<id>core.controller.rest</id>
+			<name>REST Controller</name>
+			<class>
+				<file>api/Rest.php</file>
+				<name>PsRestFrontController</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+
+		<extension point="devblocks.controller">
+			<id>core.controller.post</id>
+			<name>Post Controller</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsPostController</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+
+		<extension point="devblocks.controller">
+			<id>core.controller.feed</id>
+			<name>Feed Controller</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsFeedController</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+
+		<!-- Translations -->
+		
+		<extension point="devblocks.i18n.strings">
+			<id>core.translations</id>
+			<name>Strings</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsTranslations</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+
+		<!-- Patch Containers -->
+		
+		<extension point="devblocks.patch.container">
+			<id>core.patches</id>
+			<name>Patches</name>
+			<class>
+				<file>patch.classes.php</file>
+				<name>PsCorePatchContainer</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+	
+		<!-- Http Listeners -->
+		
+		<!-- 
+		<extension point="devblocks.listener.http">
+			<id>core.listeners.tour</id>
+			<name>Core Helpdesk Tour</name>
+			<class>
+				<file>listeners.classes.php</file>
+				<name>ChCoreTour</name>
+			</class>
+			<params>
+			</params>
+		</extension>
+		 -->
+	
+		<!-- Pages -->
+
+		<extension point="app.page">
+			<id>core.page.login</id>
+			<name>Login Page</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsLoginPage</name>
+			</class>
+			<params>
+				<param key="uri" value="login" />
+				<param key="menutitle" value="" />
+			</params>
+		</extension>
+
+		<extension point="app.page">
+			<id>core.page.home</id>
+			<name>Overview</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsHomePage</name>
+			</class>
+			<params>
+				<param key="uri" value="home" />
+				<param key="menutitle" value="overview" />
+			</params>
+		</extension>
+
+		<extension point="app.page">
+			<id>core.page.events</id>
+			<name>Events</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsEventsPage</name>
+			</class>
+			<params>
+				<param key="uri" value="events" />
+				<param key="menutitle" value="events" />
+			</params>
+		</extension>
+
+		<extension point="app.page">
+			<id>core.page.config</id>
+			<name>Configuration Page</name>
+			<class>
+				<file>classes.php</file>
+				<name>PsConfigPage</name>
+			</class>
+			<params>
+				<param key="uri" value="config" />
+				<param key="menutitle" value="" />
+			</params>
+		</extension>
+
+	</extensions>
+</plugin>

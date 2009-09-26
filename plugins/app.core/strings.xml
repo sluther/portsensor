@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+	<header datatype="winres" segtype="sentence" adminlang="en-us" srclang="en-us" o-tmf="abc"></header>
+	<body>
+
+		<!-- Common Strings -->
+
+		<tu tuid='common.cancel'>
+			<tuv xml:lang="en"><seg>cancel</seg></tuv>
+		</tu>
+		<tu tuid='common.close'>
+			<tuv xml:lang="en"><seg>close</seg></tuv>
+		</tu>
+		<tu tuid='common.delete'>
+			<tuv xml:lang="en"><seg>delete</seg></tuv>
+		</tu>
+		<tu tuid='common.404.message'>
+			<tuv xml:lang="en"><seg>no page</seg></tuv>
+		</tu>
+		<tu tuid='common.password'>
+			<tuv xml:lang="en"><seg>password</seg></tuv>
+		</tu>
+		<tu tuid='common.refresh'>
+			<tuv xml:lang="en"><seg>refresh</seg></tuv>
+		</tu>
+		<tu tuid='common.save_changes'>
+			<tuv xml:lang="en"><seg>Save Changes</seg></tuv>
+		</tu>
+		<tu tuid='common.setup'>
+			<tuv xml:lang="en"><seg>setup</seg></tuv>
+		</tu>
+		<tu tuid='common.signoff'>
+			<tuv xml:lang="en"><seg>sign off</seg></tuv>
+		</tu>
+		<tu tuid='common.signon'>
+			<tuv xml:lang="en"><seg>sign on</seg></tuv>
+		</tu>
+		<tu tuid='common.update'>
+			<tuv xml:lang="en"><seg>update</seg></tuv>
+		</tu>
+
+	</body>
+</tmx>
+<!-- 
+	
+-->
