@@ -398,6 +398,10 @@ class PsPostController extends DevblocksControllerExtension {
 					DAO_SensorEvent::log($parent_sensor->id, $device->id, $sensor->status, $sensor->metric);
 				}
 			}
+			if($sensor->status !== 0) {
+			// push notification
+				$this->_pushNotification($sensor);
+			}
 		}
 		
 		// Purge any sensors no longer provided by this monitor
@@ -442,6 +446,35 @@ class PsPostController extends DevblocksControllerExtension {
 		fclose($putdata);
 
 		return $contents;
+	}
+	private function _pushNotification($sensor) {
+		print 'running for sensor: ' . $sensor->name . "\n";
+		
+		// right now, the below switch statement is useless
+		// since we are only calling this function when
+		// the sensor status is not 0
+		switch($sensor->status) {
+			case 0:
+				$badge = 0;
+			default:
+				$json['aps']['alert']['body'] = $sensor->name . ' on '. $sensor->device . ' is DOWN!';
+				$badge = 1;
+		}
+		$json['aps']['badge'] = $badge;
+		$message = json_encode($json);
+		$apnsHost = 'gateway.sandbox.push.apple.com';
+		$apnsPort = '2195';
+		$deviceToken = '0a765003 d37f7e5c 9143dfc9 8e7833b4 19460c9c b4cbfac2 46e3fefe c3b65932';
+		$streamContext = stream_context_create();
+		stream_context_set_option($streamContext, 'ssl', 'local_cert', dirname(__FILE__) . '/../../apns.pem');
+		stream_context_set_option($streamContext, 'ssl', 'passphrase', '');
+
+		$apnsConnection = stream_socket_client('ssl://'.$apnsHost.':'.$apnsPort, $error, $errorString, 60, STREAM_CLIENT_CONNECT, $streamContext);
+		if($apnsConnection != false) {
+			$apnsMessage = chr(0) . chr(0) . chr(32) . pack('H*', str_replace(' ', '', $deviceToken)) . chr(0) . chr(strlen($message)) . $message;
+			fwrite($apnsConnection, $apnsMessage);
+			fclose($apnsConnection);			
+		}
 	}
 };
 
